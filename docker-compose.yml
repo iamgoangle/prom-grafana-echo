@@ -5,18 +5,18 @@ volumes:
   grafana_data: {}
 
 services:
-  metrics-gateway:
-    image: prom/pushgateway
-    ports:
-      - 9091:9091
+#  metrics-gateway:
+#    image: prom/pushgateway
+#    ports:
+#      - 9091:9091
 
   prometheus:
     image: prom/prometheus
     ports:
       - 9090:9090
-      # - 8080:8080
-    links:
-      - metrics-gateway:metrics-gateway
+#      - 8080:8080
+#    links:
+#      - metrics-gateway:metrics-gateway
     volumes:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
       - prometheus_data:/prometheus
